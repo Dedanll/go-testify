@@ -37,9 +37,9 @@ func TestMainHandlerWhenWrongCity(t *testing.T) {
 	assert.Contains(t, body, bodyContains)
 }
 
-func TestMainHandlerWhenCountMoreThanTotal1(t *testing.T) {
+func TestMainHandlerWhenCountMoreThanTotal(t *testing.T) {
 	totalCount := 4
-	req := httptest.NewRequest("GET", "/cafe?count=4&city=moscow", nil) // здесь нужно создать запрос к сервису
+	req := httptest.NewRequest("GET", "/cafe?count=5&city=moscow", nil) // здесь нужно создать запрос к сервису
 
 	responseRecorder := httptest.NewRecorder()
 	handler := http.HandlerFunc(mainHandle)
